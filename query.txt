@@ -6,3 +6,10 @@ SELECT * FROM `students` WHERE TIMESTAMPDIFF( YEAR, `date_of_birth`, now() ) < 3
 
 SELECT * FROM `courses` WHERE `period` LIKE 'I %' AND `year` LIKE '1%';
 
+SELECT COUNT(*) FROM `exams` WHERE HOUR(`hour`) > 13 AND `date` = '2020-06-20' 
+
+SELECT COUNT(*) FROM `degrees` WHERE `name` LIKE '%magistrale%' 
+
+SELECT COUNT(*) FROM `departments` 
+
+SELECT COUNT(*) FROM `teachers` WHERE `phone` IS NULL 
