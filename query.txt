@@ -1,7 +1,8 @@
-SELECT COUNT(*) FROM `students` WHERE YEAR(`date_of_birth`) = '1990';
+SELECT COUNT(*) FROM `students` WHERE YEAR( `date_of_birth` ) = '1990';
 
 SELECT COUNT(*) FROM `courses` WHERE `cfu` > 10 ;
 
-SELECT *
-FROM `students`
-WHERE DATE_FORMAT(FROM_DAYS(DATEDIFF(now(),`date_of_birth`)), '%Y') < 30;
+SELECT * FROM `students` WHERE TIMESTAMPDIFF( YEAR, `date_of_birth`, now() ) < 30;
+
+SELECT * FROM `courses` WHERE `period` LIKE 'I %' AND `year` LIKE '1%';
+
